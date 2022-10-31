@@ -1,47 +1,35 @@
-def print_sorted(deep_dst):
+def print_dict_sorted(deep_dst):
     for key, val in sorted(deep_dst.items()):
         try:
-            print(key, sorted(val))
+            print("'{}': {}".format(key, sorted(val, key=lambda a: (str(a).split(',')))))
+            # p_sort(val)
         except:
-            print("'{}' : {},".format(key, val))
-        # print(type(key))
-        # print(type(val))
-    print(deep_dst)
+            print("'{}' : {}".format(key, val))
 
-x = {"a":6, "c":7, "b": [3,6,2,7,0]}
-y = (5, (7, 8), {"a": 9, "f": 7, "b": 4})
-print_sorted(y)
-# d = [2, 4, 5, 1 ,3]
-# r = sorted(d) # sort list
-# print(d)
-# print(r)
-# d1 = {}
-# ds = sorted(d1) #sort dict
-#
-# s = set([3,7,1])
-# s1 = sorted(s)  #sort set
-# print(s1)
-# t = (5,3)
-# t1 = sorted(t)  #sort tuple
-# print(t1)
-#
-# def ps(*args):
-#     # argstype = args.__annotations__
-#     # for x in args:
-#     #     if
-#     # e = sorted(args)
-#     # print(e)
-#     for a in args:
-#         print(sorted(a))
-#         print(type(a))
-#         print(type(args))
-#     # if type(args) is dict:
-#     #     print("zzz")
-#     # print(type(args))
-# x = {"a":6, "c":7, "b": [3,6,2,0]}
-# y = (2, 5, 1)
-# print(sorted(y))
-# # print(type(x))
-# ps(y)
-# c = {"s": 5, "w": 4}
-# print(sorted(c.values()))
+
+def print_tuple_set_list_sorted(deep_dst):
+    for val in deep_dst:
+        p_sort(val)
+
+
+def p_sort(s):
+    if type(s) == dict:
+        print_dict_sorted(s)
+    if type(s) == tuple or type(s) == set or type(s) == list:
+        print_tuple_set_list_sorted(s)
+    if type(s) == int or type(s) == str:
+        print(s)
+
+
+
+
+x = {"a": 6, "c": 7, "b": [3, 6, [4, 9], 2, 7, 0]}
+y = [5, {"a": 9, "f": 7, "b": 4}, (9, 8)]
+z = ("v", [4, 2], 1, {"w": 7, "a": 9, "b": 5})
+p_sort(x)
+p_sort(y)
+p_sort(z)
+# t = (1, 2)
+# print(type(t))
+# print_tuple_set_list_sorted(y)
+
