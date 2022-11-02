@@ -16,7 +16,7 @@ def trying(a: str, b: tuple):
 def minus(v, w):
     return v-w
 
-def safe_call(func, *args, **kwargs):  # A function that checks the types of arguments in a function's input match arguments that the function should receive
+def safe_call(func, **kwargs):  # A function that checks the types of arguments in a function's input match arguments that the function should receive
     """
     example
     >>> safe_call(plus, x=9, y=32)
