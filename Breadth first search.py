@@ -8,11 +8,11 @@ class Node:         #class that represent Node
         return ans
 
     def __eq__(self, other):  #equal function
-        return self.x == other.x and self.y == other.y
+        return self.x == other.text and self.y == other.y
 
 
 def between(curr, one, two):    #A function that checks that we have not deviated from the path
-    if (curr.x < one.x and curr.x < two.x) or (curr.x > one.x and curr.x > two.x):
+    if (curr.text < one.text and curr.text < two.text) or (curr.text > one.text and curr.text > two.text):
         return False
     if (curr.y < one.y and curr.y < two.y) or (curr.y > one.y and curr.y > two.y):
         return False
