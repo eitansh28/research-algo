@@ -1,4 +1,10 @@
+import doctest
 def last_call(func):
+    """"
+    >>> print(plus_2(num=9))
+    11
+
+    """
     rem_list = {}
 
     def wrap(*args, **kwargs):
@@ -75,3 +81,6 @@ def connect_dict_value(d: dict):
 # print(convert_to_int(1.1))
 # print(convert_to_int(7.6))
 # print(convert_to_int(1.1))
+
+if __name__ == "__main__":
+    doctest.testmod(verbose=True)

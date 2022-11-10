@@ -7,11 +7,11 @@ class mylist(list):
         return rec(index_list[1:], super().__getitem__(index_list[0]))
 
 
-def rec(List_of_index: list, org_deep_level: list):
+def rec(List_of_index: list, orig_deep_level: list):
     if len(List_of_index) == 1:
-        return org_deep_level[List_of_index[0]]
+        return orig_deep_level[List_of_index[0]]
 
-    return rec(List_of_index[1:], org_deep_level[List_of_index[0]])
+    return rec(List_of_index[1:], orig_deep_level[List_of_index[0]])
 
 
 m = mylist([[4, 6, 2], [2, 7, 6], [9, 8, 1]])
