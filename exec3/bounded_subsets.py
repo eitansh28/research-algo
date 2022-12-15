@@ -97,7 +97,7 @@ def bounded_subsets(data: list, target: int):
     >>> for s in bounded_subsets([4, 5 ,6], 0):print(s)
 
     """
-
+#the solution based on https://stackoverflow.com/questions/69999857/getting-all-subsets-from-subset-sum-problem-on-python-using-dynamic-programming
 # initialize final result which is a list of all subsets summing up to target
     subsets = []
     # records the difference between the target value and a group of numbers
@@ -108,12 +108,10 @@ def bounded_subsets(data: list, target: int):
             subsets.append([number])  #any number in the list that is smaller than the target is a subgroup in itself
         # iterate through every record in differences
         for diff in differences:
-            print(differences)
-            print("")
             # the number complements a record in differences, i.e. a desired subset is found
             if number - diff <= 0:
                 new_subset = [number] + differences[diff]
-                new_subset.sort()
+                new_subset.sort() #sort to keep the order of the original list
                 if new_subset not in subsets:
                     subsets.append(new_subset)
                 if number - diff < 0:  # the number fell short to reach the target; add to prospect instead
@@ -121,9 +119,9 @@ def bounded_subsets(data: list, target: int):
 
         # update the differences record
         for prospect in prospects:
-            new_diff = target - sum(differences[prospect[1]]) - prospect[0]
-            differences[new_diff] = differences[prospect[1]] + [prospect[0]]
-        differences[target - number] = [number]
+            new_diff = target - sum(differences[prospect[1]]) - prospect[0]  #Setting a new distance - the distance between the target and the previous subgroup plus the current number in the list
+            differences[new_diff] = differences[prospect[1]] + [prospect[0]] #Inserting the new subgroup plus the new number to the key of the new distance
+        differences[target - number] = [number]   #Entering the current number as a value for the key of its distance from the target
 
     return subsets
 
@@ -173,7 +171,7 @@ def bounded_subsets_sort(data: list, target: int):
     all_sub = []
     var = 1
     while var <= target:
-        curr = bounded_subsets2(data, var)
+        curr = bounded_subsets2(data, var)  #start from 1 to target to be sorted
         if curr:
             all_sub.append(curr)#add to list all subsets withsum less than target (or equal)
         var = var + 1
