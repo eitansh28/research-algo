@@ -15,7 +15,7 @@ def last_call(func):
         exec(compile(example.source, filename, "single",
       File "<doctest last_call.last_call[4]>", line 1, in <module>
         plus_2(num=9)
-      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec2/last_call.py", line 29, in wrap
+      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec3/last_call.py", line 29, in wrap
         raise Exception(f'halas!! the answer is {val}')
     Exception: halas!! the answer is 11
 
@@ -31,7 +31,7 @@ def last_call(func):
         exec(compile(example.source, filename, "single",
       File "<doctest last_call.last_call[8]>", line 1, in <module>
         connect_dict_value({"a": 12, "b": 21, "c": 30})
-      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec2/last_call.py", line 45, in wrap
+      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec3/last_call.py", line 45, in wrap
         raise Exception(f'halas!! the answer is {val}')
     Exception: halas!! the answer is 122130
     >>> lists([4, 8, 7, 2])
@@ -46,7 +46,7 @@ def last_call(func):
         exec(compile(example.source, filename, "single",
       File "<doctest last_call.last_call[12]>", line 1, in <module>
         lists([4, 8, 6, 2])
-      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec2/last_call.py", line 62, in wrap
+      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec3/last_call.py", line 62, in wrap
         raise Exception(f'halas!! the answer is {val}')
     Exception: halas!! the answer is 384
     >>> lists([4, 8, 7, 2])
@@ -55,7 +55,7 @@ def last_call(func):
         exec(compile(example.source, filename, "single",
       File "<doctest last_call.last_call[13]>", line 1, in <module>
         lists([4, 8, 7, 2])
-      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec2/last_call.py", line 62, in wrap
+      File "C:/Users/eitan/PycharmProjects/pythonProject18/exec3/last_call.py", line 62, in wrap
         raise Exception(f'halas!! the answer is {val}')
     Exception: halas!! the answer is 448
     """
