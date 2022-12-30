@@ -20,17 +20,13 @@ def run_with_cvxpy(matrix_size: int):
     var_in_linear_system = cv.Variable(matrix_size)
     cont = []
     co = []
-    # c = sum(a_i * x_i for a_i, x_i in zip(coeffs[i], variables)) == b[i]
     for i in range(matrix_size):
-        # c = sum(a_i * x_i for a_i, x_i in zip(coeffs[i], var_in_linear_system)) == res2[i]
         Sum = 0
         for j in range(matrix_size):
-            print(coeffs[i][j])
-            # sum(coeffs[i][j] * var_in_linear_system[j] for a_i, x_i in zip(a[i], variables)) == b[i]
             Sum = Sum + (coeffs[i][j] * var_in_linear_system[j])
         c = Sum == res2[i]
         cont.append(c)
-        # co.append(c)
+
 
     objective = cv.Minimize(sum(var_in_linear_system))
     problem = cv.Problem(objective, co)
